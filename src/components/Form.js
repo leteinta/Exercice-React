@@ -1,13 +1,12 @@
 import {useForm} from 'react-hook-form'
 import Select from 'react-select'
 import '../styles/Form.css'
+import ButtonF from './ButtonF'
+import ButtonS from './ButtonS'
 
 function Form(){
+
     const {handleSubmit, register} = useForm()
-    const options = [
-    { value: 'one', label: 'One-way' },
-    { value: 'long', label: 'Round trip' }
-    ]
 
     function onSubmit (data) {
         console.log(data)
@@ -15,8 +14,13 @@ function Form(){
     return(
         <div className='form'>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div>
-                    <Select options={options} {... register('time')}/>
+                <div className='dropdown'>    
+                    <div className='marg'>
+                        <ButtonF />
+                    </div>
+                    <div>
+                        <ButtonS />
+                    </div>
                 </div>
                 <div className='marg'>
                     <input type='text' autoComplete='none' placeholder='From : City, State' {... register('departure',{required : true})} />

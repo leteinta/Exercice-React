@@ -1,0 +1,56 @@
+.dropdown{
+  display: flex;
+  align-items: center;
+  width: 80px;
+  height: 48px;
+}
+
+.btn{
+    border: none;
+    background: transparent;
+    font-weight: 500;
+    display: flex;
+}
+
+.under {  
+    max-height: 560px;
+    width: auto;
+    top:140px;
+    border-radius: 8px;
+    box-shadow: rgba(19, 41, 104, 0.2) 0px 8px 16px 0px;
+    padding: 16px;
+    position: absolute;
+    z-index: 10;
+    display: block;
+    background-color: #fff;
+    opacity: 1;
+}
+
+li {
+    list-style-type: none;
+    width: 100%;
+    display: inline-block;
+    height: 48px;
+    min-width: 140px;
+    margin: 7px;
+
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 12px 8px 12px;
+    border-bottom: solid 1px rgb(228, 232, 235);
+    align-items: center;
+}
+
+.add{
+    padding: 4px 0px 0px;
+}
+
+.btn-item{
+    border: none;
+    background-color: transparent;
+    
+}
