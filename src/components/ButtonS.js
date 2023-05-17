@@ -1,4 +1,5 @@
 import * as React from 'react';
+import down from '../assets/down-arrow.png'
 import minus from '../assets/minus.png'
 import plus from '../assets/plus.png'
 import '../styles/ButtonS.css'
@@ -11,12 +12,23 @@ function ButtonS() {
       setOpen(!open);
     }
 
-    //const [choice, setChoice] = React.useState("One-way");
+    const[rotateIcon, setRotateIcon]  = React.useState(false);
+
+    const handleRotate = () => {
+      setRotateIcon(!rotateIcon);
+    }
+
+    const rotate = rotateIcon ? "rotate(180deg)" : "rotate(0)"
     
 
     return (
       <div className="dropdowns">
-        <button className="btns" onClick = {handleOpen}>choice entre crochet</button>
+        <button className="btns" onClick ={() => {handleOpen(); handleRotate()}}>
+          <div className='text'>choice entre crochet</div>
+          <div className='imgs'>
+            <img src={down} style={{ transform: rotate, transition: "all 0.2s linear" }} className='icon-up-down' ></img>
+          </div>
+          </button>
         {open ? (
             <div className="under">
               <ul className="list">

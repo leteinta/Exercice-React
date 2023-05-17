@@ -1,9 +1,10 @@
 .dropdowns{
   float: left;
   width: auto;
-  height: 48px;
+  height: 20px;
   display: grid;
   place-items: center center;
+  min-width: 160px;
 }
 
 .btns{
@@ -11,6 +12,25 @@
     background: transparent;
     font-weight: 500;
     display: flex;
+    width: 100%;
+    padding: 0 1px;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.text{
+    float:left;
+}
+
+.imgs{
+    float:left;
+    width: 11px;
+    height: 11px;
+}
+
+.icon-up-down{
+    width: 11px;
+    height: 11px;
 }
 
 .under {  
@@ -33,7 +53,6 @@ li {
     display: inline-block;
     height: 48px;
     min-width: 140px;
-    margin: 7px;
 
 }
 

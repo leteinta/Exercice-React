@@ -1,19 +1,38 @@
 .dropdownf{
   float: left;
-  width: 80px;
-  height: 48px;
+  width: 95.5px;
+  height: 20px;
   margin: 0;
   padding: 0;
   display: grid;
   place-items: center center;
-
 }
 
 .btnf{
     border: none;
     background: transparent;
     font-weight: 500;
+    display: flex;
+    width: 100%;
+    padding: 0 1px;
+    justify-content: space-around;
+    cursor: pointer;
+}
 
+
+.text{
+    float:left;
+}
+
+.imgf{
+    float:left;
+    width: 11px;
+    height: 11px;
+}
+
+.icon-up-down{
+    width: 11px;
+    height: 11px;
 }
 
 .underf {  
@@ -35,6 +54,8 @@
 
 li {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .list-itemf {
@@ -48,8 +69,7 @@ li {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    margin: auto;
-    
+    margin: auto; 
 }
 
 .list > li:hover {
