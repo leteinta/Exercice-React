@@ -8,24 +8,26 @@ function ButtonF() {
       setOpen(!open);
     }
 
+    const handleList = () => {    
+          setOpen ( false ); 
+    }
+    
     const [choice, setChoice] = React.useState("One-way");
 
-    const handleList = () => {    
-      setOpen ( false ); 
-    }
+    
     
 
     return (
-      <div className="dropdown">
-        <button className="btn" onClick = {handleOpen}>{choice}</button>
+      <div className="dropdownf">
+        <button className="btnf" onClick = {handleOpen}>{choice}</button>
         {open ? (
-            <div className="under">
-              <ul className="list">
+            <div className="underf">
+              <ul className="listf">
                 <li>
-                  <button  onClick ={() => {setChoice("One-way"); handleList()}} className="list-item" >One-way</button>
+                  <button  onClick ={() => {setChoice("One-way"); handleList()}} className="list-itemf" >One-way</button>
                 </li>
                 <li>
-                  <button onClick ={() =>  {setChoice("Road trip"); handleList()}} className="list-item" >Road trip</button>
+                  <button onClick ={() =>  {setChoice("Road trip"); handleList()}} className="list-itemf" >Road trip</button>
                 </li>
               </ul>
             </div>

@@ -1,5 +1,4 @@
 import {useForm} from 'react-hook-form'
-import Select from 'react-select'
 import '../styles/Form.css'
 import ButtonF from './ButtonF'
 import ButtonS from './ButtonS'
@@ -14,11 +13,11 @@ function Form(){
     return(
         <div className='form'>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className='dropdown'>    
+                <div className='buttons'>    
                     <div className='marg'>
                         <ButtonF />
                     </div>
-                    <div>
+                    <div className='marg'>
                         <ButtonS />
                     </div>
                 </div>
