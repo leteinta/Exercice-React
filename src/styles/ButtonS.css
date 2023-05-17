@@ -36,13 +36,13 @@
 .under {  
     max-height: 560px;
     width: auto;
-    top:140px;
+    top:130px;
     border-radius: 8px;
     box-shadow: rgba(19, 41, 104, 0.2) 0px 8px 16px 0px;
     padding: 16px;
     position: absolute;
     z-index: 10;
-    display: block;
+    display: flex;
     background-color: #fff;
     opacity: 1;
 }
@@ -53,24 +53,55 @@ li {
     display: inline-block;
     height: 48px;
     min-width: 140px;
+    
+    padding: 8px 16px 0px 0px;
+}
 
+.list{
+    padding: 0;
 }
 
 .row{
+    width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    padding: 8px 12px 8px 12px;
-    border-bottom: solid 1px rgb(228, 232, 235);
     align-items: center;
+    height: 100%;
+    border-bottom: solid 1px rgb(228, 232, 235);
 }
 
 .add{
+    width: auto;
+    height: 48px;
     padding: 4px 0px 0px;
+    display: flex;
+    justify-content: center;
+
 }
 
 .btn-item{
     border: none;
     background-color: transparent;
-    
+    cursor: pointer;
+}
+
+.conter{
+    padding: 0 3px 6px 3px;
+    display: grid;
+    place-items: center center;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+}
+
+.cat{
+    font-weight: bold;
+    color: rgb(19, 41, 104);
+}
+
+.age{
+    font-size: 13px;
+    color: #717FA4;
 }
