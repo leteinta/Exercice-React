@@ -1,11 +1,12 @@
-.dropdown{
-  display: flex;
-  align-items: center;
-  width: 80px;
+.dropdowns{
+  float: left;
+  width: auto;
   height: 48px;
+  display: grid;
+  place-items: center center;
 }
 
-.btn{
+.btns{
     border: none;
     background: transparent;
     font-weight: 500;

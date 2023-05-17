@@ -15,8 +15,8 @@ function ButtonS() {
     
 
     return (
-      <div className="dropdown">
-        <button className="btn" onClick = {handleOpen}>choice entre crochet</button>
+      <div className="dropdowns">
+        <button className="btns" onClick = {handleOpen}>choice entre crochet</button>
         {open ? (
             <div className="under">
               <ul className="list">

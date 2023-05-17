@@ -1,18 +1,22 @@
-.dropdown{
-  display: flex;
-  align-items: center;
+.dropdownf{
+  float: left;
   width: 80px;
   height: 48px;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center center;
+
 }
 
-.btn{
+.btnf{
     border: none;
     background: transparent;
     font-weight: 500;
-    display: flex;
+
 }
 
-.under {  
+.underf {  
     top:140px;
     border-radius: 8px;
     box-shadow: rgba(19, 41, 104, 0.2) 0px 8px 16px 0px;
@@ -24,7 +28,7 @@
     opacity: 1;
 }
 
-.list{
+.listf{
     padding: 8px 0px;
     min-width: 140px;
 }
@@ -33,7 +37,7 @@ li {
     list-style-type: none;
 }
 
-.list-item {
+.list-itemf {
     height: 40px;
     padding: 8px 16px 8px 12px;
     color: rgb(19, 41, 104);
