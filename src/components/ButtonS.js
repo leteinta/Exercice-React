@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Select from 'react-select';
 import down from '../assets/down-arrow.png'
 import minus from '../assets/minus.png'
 import plus from '../assets/plus.png'
@@ -18,8 +19,40 @@ function ButtonS() {
     const rotate = rotateIcon ? "rotate(180deg)" : "rotate(0)"
 
     const[addYouth, setAddYouth] = React.useState([""])
-    const stylesAddYouth = addYouth ? "width: 100%;" +"display: flex;" +"justify-content: space-between;" +"align-items: center;"+"height: 100%;"+"border-bottom: solid 1px rgb(228, 232, 235);" : ""
     
+    const optionsY = [
+      { value: 0, label: '0 years' },
+      { value: 1, label: '1 years' },
+      { value: 2, label: '2 years' },
+      { value: 3, label: '3 years' },
+      { value: 4, label: '4 years' },
+      { value: 5, label: '5 years' },
+      { value: 6, label: '6 years' },
+      { value: 7, label: '7 years' },
+      { value: 8, label: '8 years' },
+      { value: 9, label: '9 years' },
+      { value: 10, label: '10 years' },
+      { value: 11, label: '11 years' },
+      { value: 12, label: '12 years' },
+      { value: 13, label: '13 years' },
+      { value: 14, label: '14 years' },
+      { value: 15, label: '15 years' },
+      { value: 16, label: '16 years' },
+      { value: 17, label: '17 years' },
+      { value: 18, label: '18 years' },
+      { value: 19, label: '19 years' },
+      { value: 20, label: '20 years' },
+      { value: 21, label: '21 years' },
+      { value: 22, label: '22 years' },
+      { value: 23, label: '23 years' },
+      { value: 24, label: '24 years' },
+      { value: 25, label: '25 years' },
+    ]
+    
+    const[addSenior, setAddSenior] = React.useState([""])
+
+    const [isSearchable] = React.useState(false)
+
     const [countA, setCountA] = React.useState(0);
     const handlePlusA = () => {
       if (countT<9){
@@ -31,12 +64,12 @@ function ButtonS() {
         setCountA(countA - 1);
       }
     }
-    
+     
     const [countY, setCountY] = React.useState(0);
     const handlePlusY = () => {
       if (countT<9){
         setCountY(countY + 1);
-        setAddYouth(addYouth.concat(<div className='row' style={{stylesAddYouth}}> Youth {countY + 1}</div>,));
+        setAddYouth(addYouth.concat(<li><div className='row'><div className='left'><div className='souscat'>Youth {countY + 1}</div></div><div className='addS'><Select className='selectY' placeholder="Age"  options={optionsY}  isSearchable={isSearchable} /></div></div> </li>,));
         }
       }
     const handleMoinsY = () => {
@@ -51,11 +84,14 @@ function ButtonS() {
     const handlePlusS = () => {
       if (countT<9){
         setCountS(countS + 1);
+        setAddSenior(addSenior.concat(<li><div className='row'><div className='left'><div className='souscat'>Senior {countS + 1}</div></div><div className='addS'><Select className='selectY' placeholder="Age"  options={optionsY}  isSearchable={isSearchable} /></div></div> </li>,));
       }
     }
     const handleMoinsS = () => {
       if ((countS-1) >= 0){
         setCountS(countS - 1);
+        addSenior.pop();
+        setAddSenior(addSenior);
       }
     }
     
@@ -91,7 +127,7 @@ function ButtonS() {
                       <button id="moinsA" onClick= {handleMoinsA} className="btn-item">
                         <img src={minus} alt="icon moins" />
                       </button>
-                      <div className='conter'>{countA}</div>
+                      <div className='counter'>{countA}</div>
                       <button id="plusA" onClick= {handlePlusA} className="btn-item">
                         <img src={plus} alt="icon plus" />
                       </button>
@@ -109,13 +145,13 @@ function ButtonS() {
                       <button id="moinsY" onClick= {handleMoinsY} className="btn-item">
                         <img src={minus} alt="icon moins" />
                       </button>
-                      <div className='conter'>{countY}</div>
+                      <div className='counter'>{countY}</div>
                       <button id="plusY" onClick={() => {handlePlusY();handleAddList()}} className="btn-item">
                         <img src={plus} alt="icon plus"/>
                       </button>
                     </div>
                   </div>
-                  <div style={{stylesAddListYouth}}>{addYouth}</div>
+                  <div >{addYouth}</div>
                 </li>
                 <li>
                   <div className='row'>
@@ -128,12 +164,13 @@ function ButtonS() {
                       <button id="moinsS" onClick= {handleMoinsS} className="btn-item">
                         <img src={minus} alt="icon moins" />
                       </button>
-                      <div className='conter'>{countS}</div>
+                      <div className='counter'>{countS}</div>
                       <button id="plusS" onClick= {handlePlusS} className="btn-item">
                         <img src={plus} alt="icon plus"/>
                       </button>
                     </div>
                   </div>
+                  <div >{addSenior}</div>
                 </li>
               </ul>
             </div>
