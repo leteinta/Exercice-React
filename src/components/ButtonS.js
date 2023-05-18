@@ -60,11 +60,11 @@ function ButtonS() {
     return (
       <div className="dropdowns">
         <button className="btns" onClick ={() => {handleOpen(); handleRotate()}}>
-          <div className='text'>{countT} Passangers</div>
+          <div className='text'>{countT} Passengers</div>
           <div className='imgs'>
             <img src={down} style={{ transform: rotate, transition: "all 0.2s linear" }} className='icon-up-down' ></img>
           </div>
-          </button>
+        </button>
         {open ? (
             <div className="under">
               <ul className="list">

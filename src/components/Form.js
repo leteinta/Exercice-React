@@ -5,7 +5,7 @@ import ButtonS from './ButtonS'
 
 function Form(){
 
-    const {handleSubmit, register} = useForm()
+    const {handleSubmit, register, formState : {errors}} = useForm()
 
     function onSubmit (data) {
         console.log(data)
@@ -23,6 +23,7 @@ function Form(){
                 </div>
                 <div className='marg'>
                     <input type='text' autoComplete='none' placeholder='From : City, State' {... register('departure',{required : true})} />
+                    {errors.departure && <div className='tooltip'><span className='tooltiptext'>please fill in departure</span></div>}
                 </div>
                 <div className='marg'>
                     <input  type='text' autoComplete='none' placeholder='To: City, State' {... register('arrival',{required : true})} />
