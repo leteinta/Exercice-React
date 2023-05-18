@@ -17,6 +17,9 @@ function ButtonS() {
     }
     const rotate = rotateIcon ? "rotate(180deg)" : "rotate(0)"
 
+    const[addYouth, setAddYouth] = React.useState([""])
+    const stylesAddYouth = addYouth ? "width: 100%;" +"display: flex;" +"justify-content: space-between;" +"align-items: center;"+"height: 100%;"+"border-bottom: solid 1px rgb(228, 232, 235);" : ""
+    
     const [countA, setCountA] = React.useState(0);
     const handlePlusA = () => {
       if (countT<9){
@@ -28,20 +31,22 @@ function ButtonS() {
         setCountA(countA - 1);
       }
     }
-
+    
     const [countY, setCountY] = React.useState(0);
     const handlePlusY = () => {
       if (countT<9){
         setCountY(countY + 1);
+        setAddYouth(addYouth.concat(<div className='row' style={{stylesAddYouth}}> Youth {countY + 1}</div>,));
+        }
       }
-    }
     const handleMoinsY = () => {
       if ((countY-1) >= 0){
         setCountY(countY - 1);
+        addYouth.pop();
+        setAddYouth(addYouth);
       }
-      
     }
-
+    
     const [countS, setCountS] = React.useState(0);
     const handlePlusS = () => {
       if (countT<9){
@@ -53,10 +58,17 @@ function ButtonS() {
         setCountS(countS - 1);
       }
     }
-
+    
     const countT = countA + countY + countS;
-
-
+    
+    const[addListYouth, setAddListYouth] = React.useState(false)
+    const handleAddList = () => {
+      if (countY == 0){
+        setAddListYouth(!addListYouth);
+      }
+    }
+    const stylesAddListYouth = addListYouth ? "borderTop: 1px solid rgb(220, 223, 233);"+" padding: 0px 16px 0px 32px;" : ""
+    
     return (
       <div className="dropdowns">
         <button className="btns" onClick ={() => {handleOpen(); handleRotate()}}>
@@ -98,11 +110,12 @@ function ButtonS() {
                         <img src={minus} alt="icon moins" />
                       </button>
                       <div className='conter'>{countY}</div>
-                      <button id="plusY" onClick= {handlePlusY} className="btn-item">
+                      <button id="plusY" onClick={() => {handlePlusY();handleAddList()}} className="btn-item">
                         <img src={plus} alt="icon plus"/>
                       </button>
                     </div>
                   </div>
+                  <div style={{stylesAddListYouth}}>{addYouth}</div>
                 </li>
                 <li>
                   <div className='row'>
