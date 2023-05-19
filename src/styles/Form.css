@@ -17,6 +17,7 @@
     flex: 1;
     margin: 2px 1px;
     align-items: center;
+    width:auto;
 }
 
 input{
@@ -74,3 +75,139 @@ input{
     border-style: solid;
     border-color: transparent transparent #666 transparent;
   }
+
+.rowD{
+    width: 100%;
+    display: flex;
+}
+
+.d{
+    width: 100%;
+}
+
+.l{
+    margin-right: 2px;
+}
+
+.r{
+    margin-left: 2px;
+}
+
+@media only screen and (min-width: 600px) {
+    .form{
+        position: absolute;
+        width: auto;
+        left: 10px;
+        right: 10px;
+        padding: 16px;
+        box-sizing: border-box;
+        min-width: 280px;
+        height: auto;
+        
+    }
+    .rowpc{
+        width: 100%;
+        display: inline-block;
+    }
+    .rowT{
+        float: left;
+        width: 50%;
+        
+    }
+    .t{
+        float: left;
+        width: 24%;
+        margin: 2px;
+        
+    }
+    .rowD{
+        float: left;
+        width: 40%;
+    }
+    .d{
+        float: left;
+        width: 96%;
+        margin: 2px;
+
+    }
+    .btn{
+        float: left;
+        width: 9%;
+        height: 54px;
+    }
+
+    .form-btn{
+        width: 100%;
+        height: 52px;
+    }
+
+    .tooltip{
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        position: absolute;
+        top: 100px;
+    }
+
+}
+@media screen and (min-width: 1000px) {
+    .form{
+        position: absolute;
+        width: auto;
+        left: 10px;
+        right: 10px;
+        padding: 16px;
+        box-sizing: border-box;
+        min-width: 280px;
+    }
+    .marg{
+        width:auto;
+        margin: 0px;
+    }
+    .rowpc{
+        width: 100%;
+        display: inline-block;
+        height: 54px;
+    }
+    .rowT{
+        float: left;
+        width: 50%;
+        
+    }
+    .t{
+        float: left;
+        width: 23%;
+        margin-right: 2px;
+        
+    }
+    .rowD{
+        float: left;
+        width: 40%;
+    }
+    .d{
+        float: left;
+        width: 96%;
+        margin: 2px;
+
+    }
+    .btn{
+        float: inline-end;
+        width: 11.4%;
+        height: 54px;
+    }
+    
+    .form-btn{
+        width: 100%;
+        margin-left: 2px;
+        height: 52px;
+    }
+
+    .tooltip{
+        z-index: 3;
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        top: 95px;
+    }
+
+}

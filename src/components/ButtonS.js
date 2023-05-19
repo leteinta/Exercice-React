@@ -98,7 +98,7 @@ function ButtonS() {
     const handlePlusY = () => {
       if (countT<9){
         setCountY(countY + 1);
-        setAddYouth(addYouth.concat(<li><div className='row'><div className='left'><div className='souscat'>Youth {countY + 1}</div></div><div className='addS'><Select className='selectY' placeholder="Age"  options={optionsY}  isSearchable={isSearchable} /></div></div> </li>,));
+        setAddYouth(addYouth.concat(<li><div className='row'><div className='left'><div className='souscat'>Youth {countY + 1}</div></div><div className='add'><Select className='selectY' placeholder="Age"  options={optionsY}  isSearchable={isSearchable} /></div></div> </li>,));
         }
       }
     const handleMoinsY = () => {
@@ -113,7 +113,7 @@ function ButtonS() {
     const handlePlusS = () => {
       if (countT<9){
         setCountS(countS + 1);
-        setAddSenior(addSenior.concat(<li><div className='row'><div className='left'><div className='souscat'>Senior {countS + 1}</div></div><div className='addS'><Select className='selectY' placeholder="Age"  options={optionsS}  isSearchable={isSearchable} /></div></div> </li>,));
+        setAddSenior(addSenior.concat(<li><div className='row'><div className='left'><div className='souscat'>Senior {countS + 1}</div></div><div className='add'><Select className='selectY' placeholder="Age"  options={optionsS}  isSearchable={isSearchable} /></div></div> </li>,));
       }
     }
     const handleMoinsS = () => {
@@ -183,7 +183,7 @@ function ButtonS() {
                   <div >{addYouth}</div>
                 </li>
                 <li>
-                  <div className='row'>
+                  <div className='row S'>
                     <div className='left'>
                       <span className='cat'>Senior</span>
                       <span className='age'>58+ years </span>

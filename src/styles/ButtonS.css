@@ -54,6 +54,10 @@ li {
     height: 48px;
     min-width: 140px;
     padding: 8px 16px 0px 0px;
+    position: relative;
+}
+.S{
+    margin:  8px 16px 0px 0px;
 }
 
 .list{
@@ -67,6 +71,7 @@ li {
     align-items: center;
     height: 100%;
     border-bottom: solid 1px rgb(228, 232, 235);
+    position: relative;
 }
 
 .add{
@@ -108,4 +113,36 @@ li {
 .souscat{
     font-size: 16px;
     color: rgb(66, 84, 134);
+    margin-left: 15px;
+}
+
+.selectY{
+    width: auto;
+}
+
+.css-13cymwt-control{
+    width: 120px;
+    height: 40px;
+}
+
+.css-1fdsijx-ValueContainer{
+    width: auto;
+    height: 33px;
+    align-content: center;
+}
+
+.css-1jqq78o-placeholder{
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 600px){
+    .under{
+        top: 45px;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .under{
+        top: 40px;
+    }
 }

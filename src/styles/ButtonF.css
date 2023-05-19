@@ -70,9 +70,24 @@ li {
     background-color: transparent;
     cursor: pointer;
     margin: auto; 
+
+    &:hover {
+        font-weight: bold;
+    }
 }
 
 .list > li:hover {
   background-color: none;
 }
 
+@media only screen and (min-width: 600px){
+    .underf{
+        top: 40px;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .underf{
+        top: 35px;
+    }
+}
