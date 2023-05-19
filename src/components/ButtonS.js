@@ -51,6 +51,35 @@ function ButtonS() {
     
     const[addSenior, setAddSenior] = React.useState([""])
 
+    const optionsS = [
+      { value: 58, label: '58 years' },
+      { value: 59, label: '59 years' },
+      { value: 60, label: '60 years' },
+      { value: 61, label: '61 years' },
+      { value: 62, label: '62 years' },
+      { value: 63, label: '63 years' },
+      { value: 64, label: '64 years' },
+      { value: 65, label: '65 years' },
+      { value: 66, label: '66 years' },
+      { value: 67, label: '67 years' },
+      { value: 68, label: '68 years' },
+      { value: 69, label: '69 years' },
+      { value: 70, label: '70 years' },
+      { value: 71, label: '71 years' },
+      { value: 72, label: '72 years' },
+      { value: 73, label: '73 years' },
+      { value: 74, label: '74 years' },
+      { value: 75, label: '75 years' },
+      { value: 77, label: '77 years' },
+      { value: 78, label: '78 years' },
+      { value: 79, label: '79 years' },
+      { value: 80, label: '80 years' },
+      { value: 81, label: '81 years' },
+      { value: 82, label: '82 years' },
+      { value: 83, label: '83 years' },
+      { value: 84, label: '84 years' },
+    ]
+
     const [isSearchable] = React.useState(false)
 
     const [countA, setCountA] = React.useState(0);
@@ -84,7 +113,7 @@ function ButtonS() {
     const handlePlusS = () => {
       if (countT<9){
         setCountS(countS + 1);
-        setAddSenior(addSenior.concat(<li><div className='row'><div className='left'><div className='souscat'>Senior {countS + 1}</div></div><div className='addS'><Select className='selectY' placeholder="Age"  options={optionsY}  isSearchable={isSearchable} /></div></div> </li>,));
+        setAddSenior(addSenior.concat(<li><div className='row'><div className='left'><div className='souscat'>Senior {countS + 1}</div></div><div className='addS'><Select className='selectY' placeholder="Age"  options={optionsS}  isSearchable={isSearchable} /></div></div> </li>,));
       }
     }
     const handleMoinsS = () => {
