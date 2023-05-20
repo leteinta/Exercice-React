@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Select from 'react-select';
-import down from '../assets/down-arrow.png'
-import minus from '../assets/minus.png'
-import plus from '../assets/plus.png'
-import '../styles/ButtonS.css'
+import down from '../assets/down-arrow.png';
+import minus from '../assets/minus.png';
+import plus from '../assets/plus.png';
+import '../styles/ButtonS.css';
 
 function ButtonS() {
 
@@ -126,13 +126,6 @@ function ButtonS() {
     
     const countT = countA + countY + countS;
     
-    const[addListYouth, setAddListYouth] = React.useState(false)
-    const handleAddList = () => {
-      if (countY == 0){
-        setAddListYouth(!addListYouth);
-      }
-    }
-    const stylesAddListYouth = addListYouth ? "borderTop: 1px solid rgb(220, 223, 233);"+" padding: 0px 16px 0px 32px;" : ""
     
     return (
       <div className="dropdowns">
@@ -152,7 +145,6 @@ function ButtonS() {
                       <span className='age'>26+ years </span>
                     </div>
                     <div className='add'>
-                      {/*<button onClick ={() => setChoice("One-way")} className=" center"  >moins</button>*/}
                       <button id="moinsA" onClick= {handleMoinsA} className="btn-item">
                         <img src={minus} alt="icon moins" />
                       </button>
@@ -170,12 +162,11 @@ function ButtonS() {
                       <span className='age'>0-25 years </span>
                     </div>
                     <div className='add'>
-                      {/*<button onClick ={() => setChoice("One-way")} className=" center"  >moins</button>*/}
                       <button id="moinsY" onClick= {handleMoinsY} className="btn-item">
                         <img src={minus} alt="icon moins" />
                       </button>
                       <div className='counter'>{countY}</div>
-                      <button id="plusY" onClick={() => {handlePlusY();handleAddList()}} className="btn-item">
+                      <button id="plusY" onClick= {handlePlusY} className="btn-item">
                         <img src={plus} alt="icon plus"/>
                       </button>
                     </div>
@@ -189,7 +180,6 @@ function ButtonS() {
                       <span className='age'>58+ years </span>
                     </div>
                     <div className='add'>
-                      {/*<button onClick ={() => setChoice("One-way")} className=" center"  >moins</button>*/}
                       <button id="moinsS" onClick= {handleMoinsS} className="btn-item">
                         <img src={minus} alt="icon moins" />
                       </button>

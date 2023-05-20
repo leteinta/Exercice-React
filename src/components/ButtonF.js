@@ -1,6 +1,6 @@
 import * as React from 'react';
 import down from '../assets/down-arrow.png';
-import '../styles/ButtonF.css'
+import '../styles/ButtonF.css';
 
 function ButtonF() {
     const [open, setOpen] = React.useState(false);
