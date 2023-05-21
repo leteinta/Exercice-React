@@ -24,6 +24,11 @@ function Form(){
         }
         loaddeparture()
     },[])
+    const onSuggestHandler = (text) => {
+        setText(text);
+        setSuggestions([]);
+    }
+
     const onChangeHandler = (text) => {
         let matches = []
         if (text.length > 0) {
@@ -33,8 +38,8 @@ function Form(){
             })
         }
         console.log('matches', matches)
-        setSuggestions(matches)
-        setText(text)
+        setSuggestions(matches);
+        setText(text);
     }
 
     return(
@@ -49,16 +54,22 @@ function Form(){
                     </div>
                 </div>
                 <div className='rowpc'>
-                    <div className='rowsT'>
+                    <div className='rowT'>
                         <div className='marg'>
-                            <input className='input t' type='text' onChange={e=> onChangeHandler(e.target.value)} value={text} autoComplete='none' placeholder='From : City, State'  />
-                            {suggestions && suggestions.map((suggestions, i) => 
-                            <div key={i} ><div>{suggestions.local_name}</div></div>
-                            )}
-                            {errors.departure && (<div className='tooltip'><span className='tooltiptext'>please fill in departure</span></div>)}
+                            <div className='col'>
+                                <input className='input t' type='text' onChange={e=> onChangeHandler(e.target.value)} value={text} autoComplete='none' placeholder='From : City, State'  required/>
+                                <div className='inside'>
+                                    {suggestions && suggestions.map((suggestions, i) => 
+                                    <div key={i} onClick={()=> onSuggestHandler(suggestions.local_name)}><div className='ligne'>{suggestions.local_name}</div></div>
+                                    )}
+                                </div>
+                                {errors.departure && (<div className='tooltip'><span className='tooltiptext'>please fill in departure</span></div>)}
+                            </div>
                         </div>
                         <div className='marg'>
-                            <input  className='input t' type='text' autoComplete='none' placeholder='To: City, State'  {... register('arrival')} />
+                            <div className='col'>
+                                <input  className='input to' type='text' autoComplete='none' placeholder='To: City, State'  {... register('arrival')} />
+                            </div>
                         </div>
                     </div>
                     <div className='rowD'>

@@ -28,6 +28,7 @@ input{
     border-radius: 8px;
     background-color: #f1f2f6;
     font-size: 16px;
+    color: rgb(33, 70, 172);
 
 }
 
@@ -92,8 +93,31 @@ input{
 .r{
     margin-left: 2px;
 }
+.inside{
+    width: 315px;
+    top: 180px;
+    border-radius: 8px;
+    box-shadow: rgba(19, 41, 104, 0.2) 0px 8px 16px 0px;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: #fff;
+    opacity: 1;
+}
+.ligne{
+    padding: 8px 16px;
+    color: rgb(33, 70, 172);
+    cursor: pointer;
+    width: auto;
 
-@media only screen and (min-width: 600px) {
+    &:hover {
+
+        font-weight: bold;
+    }
+}
+@media only screen and (min-width: 650px) {
     .form{
         position: absolute;
         width: auto;
@@ -108,17 +132,30 @@ input{
     .rowpc{
         width: 100%;
         display: inline-block;
+        height: 54px;
+
     }
     .rowT{
         float: left;
         width: 50%;
         
     }
+    .col{
+        float: left;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
     .t{
         float: left;
-        width: 24%;
-        margin: 2px;
+        width: 94%;
+        margin-right: 2px;
         
+    }
+    .to{
+        float: left;
+        width: 94%;
+        margin-left: 2px;
     }
     .rowD{
         float: left;
@@ -127,18 +164,25 @@ input{
     .d{
         float: left;
         width: 96%;
-        margin: 2px;
-
+        margin: 0px;
+        height: 50px;
+    }
+    .l{
+        margin-right: 0px;
+    }
+    
+    .r{
+        margin-left: 0px;
     }
     .btn{
         float: left;
-        width: 9%;
-        height: 54px;
+        width: 9.7%;
+        height: 51px;
     }
 
     .form-btn{
         width: 100%;
-        height: 52px;
+        height: 51px;
     }
 
     .tooltip{
@@ -148,7 +192,11 @@ input{
         position: absolute;
         top: 100px;
     }
-
+    .inside{
+        width: 315px;
+        top: 100px;
+        
+    }
 }
 @media screen and (min-width: 1000px) {
     .form{
@@ -170,44 +218,56 @@ input{
         height: 54px;
     }
     .rowT{
-        float: left;
         width: 50%;
+        display: inline-block;
         
+    }
+    .col{
+        float: left;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
     }
     .t{
         float: left;
-        width: 23%;
-        margin-right: 2px;
-        
+        width: 96%;
+        margin: 0px;
+  
+    }
+    .to{
+        float: left;
+        width: 96%;
+        margin: 0px;
     }
     .rowD{
         float: left;
         width: 40%;
     }
     .d{
+        height: 50px;
         float: left;
         width: 96%;
-        margin: 2px;
+        margin: 0px;
 
     }
     .btn{
         float: inline-end;
-        width: 11.4%;
-        height: 54px;
+        width: 10%;
+        height: 51px;
     }
     
     .form-btn{
         width: 100%;
-        margin-left: 2px;
-        height: 52px;
+        height: 51px;
     }
 
     .tooltip{
-        z-index: 3;
+        z-index: 9;
         width: 100%;
-        display: flex;
-        justify-content: left;
+    }
+    .inside{
+        width: 350px;
         top: 95px;
     }
-
+    
 }
