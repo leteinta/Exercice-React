@@ -18,11 +18,11 @@ function Form(){
     const [text, setText] = useState('');
     const [suggestions, setSuggestions] = useState([]);
     useEffect(() =>{
-        const loaddeparture = async ()=> {
+        const loadDeparture = async ()=> {
             const response = await axios.get('https://api.comparatrip.eu/cities/autocomplete/?q=par');
-            setDeparture(response.data)
+            setDeparture(response.data);
         }
-        loaddeparture()
+        loadDeparture()
     },[])
     const onSuggestHandler = (text) => {
         setText(text);
@@ -37,10 +37,56 @@ function Form(){
                 return departure.local_name.match(regex)
             })
         }
-        console.log('matches', matches)
         setSuggestions(matches);
         setText(text);
     }
+
+    // pour API 2 et 3
+    const [arrival,setArrival]= useState([]);
+    const [textArrival, setTextArrival] = useState('');
+    useEffect(() =>{
+        const loadArrival = async ()=> {
+            const rep = await axios.get('https://api.comparatrip.eu/cities/popular/5');
+            //console.log(rep.data);
+            setArrival(rep.data);
+        }
+        loadArrival()
+    },[])
+
+    const [arrivalParis,setArrivalParis]= useState([]);
+    useEffect(() =>{
+        const loadArrivalParis = async ()=> {
+            const rep1 = await axios.get('https://api.comparatrip.eu/cities/popular/from/paris/5');
+            //console.log(rep1.data);
+            setArrivalParis(rep1.data);
+        }
+        loadArrivalParis()
+    },[])
+
+    const onChangeHandler1 = () => {
+        let matches1 = []
+        if (textArrival.length === 0 && text!='paris') {
+            matches1 = arrival.filter(arrival => {
+                return arrival.local_name
+            })
+        }
+        if (text === 'paris') {
+                matches1 = arrivalParis.filter(arrivalParis => {
+                const regex1 = new RegExp(`${textArrival}`, "gi");
+                return arrivalParis.local_name.match(regex1)
+            })
+        }
+        if (text === 'Paris') {
+            matches1 = arrivalParis.filter(arrivalParis => {
+            const regex1 = new RegExp(`${textArrival}`, "gi");
+            return arrivalParis.local_name.match(regex1)
+        })
+    }
+        //console.log('matches1', matches1)
+        setTextArrival(textArrival);
+    }
+
+
 
     return(
         <div className='form'>
@@ -57,7 +103,7 @@ function Form(){
                     <div className='rowT'>
                         <div className='marg'>
                             <div className='col'>
-                                <input className='input t' type='text' onChange={e=> onChangeHandler(e.target.value)} value={text} autoComplete='none' placeholder='From : City, State'  required/>
+                                <input className='input t' type='text' onChange={e=> onChangeHandler(e.target.value)} value={text} placeholder='From : City, State' required/>
                                 <div className='inside'>
                                     {suggestions && suggestions.map((suggestions, i) => 
                                     <div key={i} onClick={()=> onSuggestHandler(suggestions.local_name)}><div className='ligne'>{suggestions.local_name}</div></div>
@@ -68,7 +114,7 @@ function Form(){
                         </div>
                         <div className='marg'>
                             <div className='col'>
-                                <input  className='input to' type='text' autoComplete='none' placeholder='To: City, State'  {... register('arrival')} />
+                                <input  className='input to' type='text' placeholder='To: City, State'  onClick={e=> onChangeHandler1(e.target.value)} value={textArrival} />
                             </div>
                         </div>
                     </div>
