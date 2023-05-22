@@ -162,6 +162,7 @@ function Form(){
                     <button type='submit' className='form-btn marg' onSubmit={handleSubmit(onSubmit)}>Search</button>
                     </div>
                 </div>
+            <div className='rowswitch'><label className='switch'><input type="checkbox"/><span className="slider round"></span></label><div className='accommodation'>Find my accommodation</div></div>
             </form>
         </div>
     );
