@@ -128,11 +128,11 @@ function ButtonS() {
     
     
     return (
-      <div className="dropdowns">
-        <button className="btns" onClick ={() => {handleOpen(); handleRotate()}}>
+      <div className="dropdowns" >
+        <button className="btns" onClick ={() => {handleOpen(); handleRotate()}}> {/*  onBlur={()=> { setTimeout(() => {handleOpen(false);handleRotate(false)}, 100)}} ferme à chaque click donc si je rajoute un passager, le boutton se ferme*/}
           <div className='text'>{countT} Passengers</div>
           <div className='imgs'>
-            <img src={down} style={{ transform: rotate, transition: "all 0.2s linear" }} className='icon-up-down' ></img>
+            <img src={down} style={{ transform: rotate, transition: "all 0.2s linear" }} className='icon-up-down' alt='icon up or down'></img>
           </div>
         </button>
         {open ? (

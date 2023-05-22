@@ -28,7 +28,7 @@ function ButtonF() {
 
     return (
       <div className="dropdownf">
-        <button className="btnf" onClick ={() => {handleOpen(); handleRotate()}}>
+        <button className="btnf" onClick ={() => {handleOpen(); handleRotate()}} onBlur={()=> { setTimeout(() => {handleOpen(false);handleRotate(false)}, 100)}}>
           <div className='text'>
             {choice}
           </div>

@@ -95,7 +95,7 @@ input{
 }
 .inside{
     width: 315px;
-    top: 180px;
+    top: 184px;
     border-radius: 8px;
     box-shadow: rgba(19, 41, 104, 0.2) 0px 8px 16px 0px;
     position: absolute;
@@ -117,6 +117,10 @@ input{
         font-weight: bold;
     }
 }
+.arrival{
+    top: 240px;
+}
+
 @media only screen and (min-width: 650px) {
     .form{
         position: absolute;

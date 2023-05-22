@@ -84,12 +84,12 @@ function Form(){
                 return arrivalParis.local_name.match(regex1)
             })
         }
-        if (text === 'Paris') {
+        else if (text === 'Paris') {
             matches1 = arrivalParis.filter(arrivalParis => {
             const regex1 = new RegExp(`${textArrival}`, "gi");
             return arrivalParis.local_name.match(regex1)
         })
-    }
+        }
         //console.log('matches1', matches1)
         setSuggestionsArrival(matches1);
         setTextArrival(textArrival);
@@ -135,7 +135,7 @@ function Form(){
                         <div className='marg'>
                             <div className='col'>
                                 <input  className='input to' type='text' placeholder='To: City, State'  onClick={e=> onClickArrivalHandler(e.target.value)} value={textArrival} onChange={e=> onChangeArrivalHandler(e.target.value)} onBlur={()=> { setTimeout(() => {setSuggestionsArrival([])}, 100);}}/>
-                                <div className='inside'>
+                                <div className='inside arrival'>
                                     {suggestionsArrival && suggestionsArrival.map((suggestionsArrival, i) => 
                                     <div key={i} onClick={()=> onSuggestArrivalHandler(suggestionsArrival.local_name)}><div className='ligne'>{suggestionsArrival.local_name}</div></div>
                                     )}
