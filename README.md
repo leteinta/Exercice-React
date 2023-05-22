@@ -2,7 +2,7 @@
 
 Cette app a pour objectif de réaliser la même barre de recherche qui se trouve sur Omio : https://www.omio.com/
 
-Découvrez le juste ici : [Mon App](https://leteinta.github.io/Exercice-React/).
+Découvrez le juste ici : [Mon App](https://leteinta.github.io/test-react/).
 
 J'ai découvert le React avec cet exercice. J'ai d'abord suivie le cours : [Débutez avec React](https://openclassrooms.com/fr/courses/7008001-debutez-avec-react) sur OpenClassroom pendant 2 jours et demis. Ensuite j'ai fais l'exercice pendant 8 jours (avec environs 5h à 10h par jours). 
 Durant ces 8 jours, j'ai eu quelques problèmes, qui pour la plupart on été résolue en regardant des forums, des sites(ex: [React](https://react.dev/),[w3schools](https://www.w3schools.com/) ...) 
