@@ -1,10 +1,10 @@
 .dropdowns{
-  float: left;
-  width: auto;
-  height: 20px;
-  display: grid;
-  place-items: center center;
-  min-width: 120px;
+    float: left;
+    width: auto;
+    height: 20px;
+    display: grid;
+    place-items: center center;
+    min-width: 120px;
 }
 
 .btns{
