@@ -5,7 +5,7 @@ import Form from './Form'
 function App() {
   return (
     <div className="App">
-      <h1>Barre de recherche</h1>
+      <h3>Exercice : Recréer et déployer une barre de recherche le plus proche possible de celle de Omio</h3>
       <Form/>
     </div>
   );
