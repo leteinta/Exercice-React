@@ -20,6 +20,7 @@ function Form(){
     useEffect(() =>{
         const loadDeparture = async ()=> {
             const response = await axios.get('https://api.comparatrip.eu/cities/autocomplete/?q=par');
+            //console.log(response.data);
             setDeparture(response.data);
         }
         loadDeparture()
@@ -37,6 +38,7 @@ function Form(){
                 return departure.local_name.match(regex)
             })
         }
+        //console.log(matches);
         setSuggestions(matches);
         setText(text);
     }
@@ -44,6 +46,7 @@ function Form(){
     // pour API 2 et 3
     const [arrival,setArrival]= useState([]);
     const [textArrival, setTextArrival] = useState('');
+    const [suggestionsArrival, setSuggestionsArrival] = useState([])
     useEffect(() =>{
         const loadArrival = async ()=> {
             const rep = await axios.get('https://api.comparatrip.eu/cities/popular/5');
@@ -63,9 +66,14 @@ function Form(){
         loadArrivalParis()
     },[])
 
-    const onChangeHandler1 = () => {
+    const onSuggestArrivalHandler = (textArrival) => {
+        console.log(textArrival);
+        setTextArrival(textArrival);
+        setSuggestionsArrival([])
+    }
+    const onClickArrivalHandler = () => {
         let matches1 = []
-        if (textArrival.length === 0 && text!='paris') {
+        if (textArrival.length === 0 && text !== 'paris') {
             matches1 = arrival.filter(arrival => {
                 return arrival.local_name
             })
@@ -83,27 +91,39 @@ function Form(){
         })
     }
         //console.log('matches1', matches1)
+        setSuggestionsArrival(matches1);
         setTextArrival(textArrival);
     }
 
-
+    const onChangeArrivalHandler = (textArrival) => {
+        let matches1 = []
+        if (textArrival.length > 0) {
+            matches1 = arrival.filter(arrival => {
+                const regex = new RegExp(`${textArrival}`, "gi");
+                return arrival.local_name.match(regex)
+            })
+        }
+        //console.log(matches);
+        setSuggestionsArrival(matches1);
+        setTextArrival(textArrival);
+    }
 
     return(
         <div className='form'>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <div className='buttons'>    
-                    <div className='marg'>
-                        <ButtonF />
-                    </div>
-                    <div className='marg'>
-                        <ButtonS />
-                    </div>
+            <div className='buttons'>    
+                <div className='marg'>
+                    <ButtonF />
                 </div>
+                <div className='marg'>
+                    <ButtonS />
+                </div>
+            </div>
+            <form >
                 <div className='rowpc'>
                     <div className='rowT'>
                         <div className='marg'>
                             <div className='col'>
-                                <input className='input t' type='text' onChange={e=> onChangeHandler(e.target.value)} value={text} placeholder='From : City, State' required/>
+                                <input className='input t' type='text' onChange={e=> onChangeHandler(e.target.value)} value={text} onBlur={()=> { setTimeout(() => {setSuggestions([])}, 100);}} placeholder='From : City, State' required/>
                                 <div className='inside'>
                                     {suggestions && suggestions.map((suggestions, i) => 
                                     <div key={i} onClick={()=> onSuggestHandler(suggestions.local_name)}><div className='ligne'>{suggestions.local_name}</div></div>
@@ -114,7 +134,12 @@ function Form(){
                         </div>
                         <div className='marg'>
                             <div className='col'>
-                                <input  className='input to' type='text' placeholder='To: City, State'  onClick={e=> onChangeHandler1(e.target.value)} value={textArrival} />
+                                <input  className='input to' type='text' placeholder='To: City, State'  onClick={e=> onClickArrivalHandler(e.target.value)} value={textArrival} onChange={e=> onChangeArrivalHandler(e.target.value)} onBlur={()=> { setTimeout(() => {setSuggestionsArrival([])}, 100);}}/>
+                                <div className='inside'>
+                                    {suggestionsArrival && suggestionsArrival.map((suggestionsArrival, i) => 
+                                    <div key={i} onClick={()=> onSuggestArrivalHandler(suggestionsArrival.local_name)}><div className='ligne'>{suggestionsArrival.local_name}</div></div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -127,7 +152,7 @@ function Form(){
                         </div>
                     </div>
                     <div className='btn'>
-                    <button type='submit' className='form-btn marg'>Search</button>
+                    <button type='submit' className='form-btn marg' onSubmit={handleSubmit(onSubmit)}>Search</button>
                     </div>
                 </div>
             </form>
