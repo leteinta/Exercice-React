@@ -19,17 +19,33 @@
     align-items: center;
     width:auto;
 }
+.rowposition{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #f1f2f6;
+    border-radius: 8px;
+
+}
+
+.cercle{
+    margin: 4px 4px 0px 4px;
+
+}
+
+.to{
+  width: 100%;  
+}
 
 input{
     height: 48px;
-    width: 100%;
+    width: 98%;
     font-weight: 400;
     border: 1px solid #f1f2f6;
     border-radius: 8px;
     background-color: #f1f2f6;
     font-size: 16px;
     color: rgb(33, 70, 172);
-
 }
 
 .form-btn{
@@ -83,7 +99,7 @@ input{
 }
 
 .d{
-    width: 100%;
+    width: 98%;
 }
 
 .l{
@@ -149,6 +165,9 @@ input{
         display: flex;
         flex-direction: column;
         width: 50%;
+    }
+    .rowposition{
+        width: 98%; 
     }
     .t{
         float: left;

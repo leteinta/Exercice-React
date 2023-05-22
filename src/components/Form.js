@@ -4,6 +4,9 @@ import axios from 'axios';
 import '../styles/Form.css';
 import ButtonF from './ButtonF';
 import ButtonS from './ButtonS';
+import position from '../assets/map.png';
+import depart from '../assets/cercle.png';
+
 function Form(){
 
     const {handleSubmit, register, formState : {errors}} = useForm();
@@ -123,6 +126,7 @@ function Form(){
                     <div className='rowT'>
                         <div className='marg'>
                             <div className='col'>
+                            <div className='rowposition'><div className='cercle'><img src={depart} alt="icon depart" /></div>
                                 <input className='input t' type='text' onChange={e=> onChangeHandler(e.target.value)} value={text} onBlur={()=> { setTimeout(() => {setSuggestions([])}, 100);}} placeholder='From : City, State' required/>
                                 <div className='inside'>
                                     {suggestions && suggestions.map((suggestions, i) => 
@@ -131,10 +135,13 @@ function Form(){
                                 </div>
                                 {errors.departure && (<div className='tooltip'><span className='tooltiptext'>please fill in departure</span></div>)}
                             </div>
+                            </div>
                         </div>
                         <div className='marg'>
                             <div className='col'>
+                                <div className='rowposition'><img src={position} alt="icon position" />
                                 <input  className='input to' type='text' placeholder='To: City, State'  onClick={e=> onClickArrivalHandler(e.target.value)} value={textArrival} onChange={e=> onChangeArrivalHandler(e.target.value)} onBlur={()=> { setTimeout(() => {setSuggestionsArrival([])}, 100);}}/>
+                                </div>
                                 <div className='inside arrival'>
                                     {suggestionsArrival && suggestionsArrival.map((suggestionsArrival, i) => 
                                     <div key={i} onClick={()=> onSuggestArrivalHandler(suggestionsArrival.local_name)}><div className='ligne'>{suggestionsArrival.local_name}</div></div>
