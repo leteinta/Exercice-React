@@ -141,7 +141,7 @@ function ButtonS() {
                 <li>
                   <div className='row'>
                     <div className='left'>
-                      <span className='cat'>Adults</span>
+                      <span className='cat'>Adult</span>
                       <span className='age'>26+ years </span>
                     </div>
                     <div className='add'>
